@@ -1,0 +1,24 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: springcloud_eureka_7002
+  datasource:
+      name: TestConnection  #数据库名
+      url: jdbc:mysql://localhost:3306/seatselection?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8 #url
+      username: root  #用户名
+      password: 123456  #密码
+      driver-class-name: com.mysql.jdbc.Driver #数据库链接驱动
+    #eureka配置
+eureka:
+  instance:
+    hostname: eureka7002.com #eureka服务端实例信息
+  client:
+    register-with-eureka: false #表示是否向eureka注册中心注册过去，服务中心不用注册；
+    fetch-registry: false #检索注册中心的服务，本模块就是服务中心所以不用检索；非注册中心的则需要检索；true
+    service-url: #简单理解就是监控页面
+      #单机配置
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #集群配置
+      defaultZone: http://eureka7001.com:7001/springcloud_eureka_7001_war/eureka/,http://eureka7003.com:7003/springcloud_eureka_7003_war/eureka/

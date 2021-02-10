@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="" />
+    <file type="web" url="file://$PROJECT_DIR$/springcloud_API/src/main/java" />
+    <file type="web" url="file://$PROJECT_DIR$/springcloud_eureka_7001" />
+    <file type="web" url="file://$PROJECT_DIR$/springcloud_eureka_7002" />
+    <file type="web" url="file://$PROJECT_DIR$/springcloud_eureka_7003" />
+    <file type="web" url="file://$PROJECT_DIR$/springcloud_user_consumer_8101" />
+    <file type="web" url="file://$PROJECT_DIR$/springcould_user_provider_8001" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springcloud_api/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
