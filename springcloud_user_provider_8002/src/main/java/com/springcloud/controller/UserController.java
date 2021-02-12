@@ -48,7 +48,7 @@ public class UserController {
         Map<String,Object> map = new HashMap<>();
         map.put("discovery=>services",services);
         //获取服务实例具体信息
-        List<ServiceInstance> instances = discoveryClient.getInstances("SPRINGCLOUD_USER_PROVIDER");
+        List<ServiceInstance> instances = discoveryClient.getInstances("SPRINGCLOUD-USER-PROVIDER");
         List<String> serviceInstanceList = new ArrayList<>();
         for (ServiceInstance instance : instances) {
            String string = instance.getHost()+"   "+

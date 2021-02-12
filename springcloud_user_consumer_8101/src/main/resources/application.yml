@@ -2,7 +2,7 @@ server:
   port: 8101
 spring:
   application:
-    name: springcloud_user_consumer_8101
+    name: springcloud-user-consumer-8101
   datasource:
     name: TestConnection  #数据库名
     url: jdbc:mysql://localhost:3306/seatselection?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8 #url
