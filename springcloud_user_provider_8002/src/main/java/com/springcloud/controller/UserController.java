@@ -1,11 +1,12 @@
 package com.springcloud.controller;
 
-import com.springcloud.service.UserService;
 import com.springcloud.dto.UserRequestDto;
 import com.springcloud.entity.UserEntity;
+import com.springcloud.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,13 +21,14 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@Api(tags = "springCloud_user_provider_8001")
-@RequestMapping("springCloud_user_provider_8001")
+@Api(tags = "springCloud_user_provider_8002")
 public class UserController {
     @Autowired
     private UserService userService;
     @Resource
     private DiscoveryClient discoveryClient;
+    @Value("${eureka.instance.instance-id}")
+    private String serverProvider;
 
     @RequestMapping(value = "/getUser",method = RequestMethod.POST)
     @ApiOperation(value = "getUser")
@@ -34,6 +36,8 @@ public class UserController {
         List<UserEntity> allUser = userService.findAllUser(dto);
         Map<String,Object> map = new HashMap<>();
         map.put("data",allUser);
+
+        map.put("serverProvider",serverProvider);
         return map;
     }
 
@@ -44,7 +48,7 @@ public class UserController {
         Map<String,Object> map = new HashMap<>();
         map.put("discovery=>services",services);
         //获取服务实例具体信息
-        List<ServiceInstance> instances = discoveryClient.getInstances("SPRINGCLOUD_USER_PROVIDER_8001");
+        List<ServiceInstance> instances = discoveryClient.getInstances("SPRINGCLOUD_USER_PROVIDER");
         List<String> serviceInstanceList = new ArrayList<>();
         for (ServiceInstance instance : instances) {
            String string = instance.getHost()+"   "+

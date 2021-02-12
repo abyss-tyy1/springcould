@@ -8,7 +8,8 @@
     <file type="web" url="file://$PROJECT_DIR$/springcloud_eureka_7002" />
     <file type="web" url="file://$PROJECT_DIR$/springcloud_eureka_7003" />
     <file type="web" url="file://$PROJECT_DIR$/springcloud_user_consumer_8101" />
-    <file type="web" url="file://$PROJECT_DIR$/springcould_user_provider_8001" />
+    <file type="web" url="file://$PROJECT_DIR$/springcloud_user_provider_8001" />
+    <file type="web" url="file://$PROJECT_DIR$/springcloud_user_provider_8002" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

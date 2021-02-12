@@ -19,6 +19,6 @@ eureka:
     fetch-registry: false #检索注册中心的服务，本模块就是服务中心所以不用检索；非注册中心的则需要检索；true
     service-url: #简单理解就是监控页面
       #单机配置
-      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/项目war包：springcloud_eureka_7001_war/eureka/
       #集群配置
       defaultZone: http://eureka7001.com:7001/springcloud_eureka_7001_war/eureka/,http://eureka7003.com:7003/springcloud_eureka_7003_war/eureka/

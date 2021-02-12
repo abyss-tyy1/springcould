@@ -9,3 +9,9 @@ spring:
     username: root  #用户名
     password: 123456  #密码
     driver-class-name: com.mysql.jdbc.Driver #数据库链接驱动
+eureka:
+  client:
+    register-with-eureka: false #作为消费者不提供服务，不应该注册自己
+    service-url:
+      defaultZone: http://eureka7001.com:7001/springcloud_eureka_7001_war/eureka/,http://eureka7002.com:7002/springcloud_eureka_7002_war/eureka/,http://eureka7003.com:7003/springcloud_eureka_7003_war/eureka/
+

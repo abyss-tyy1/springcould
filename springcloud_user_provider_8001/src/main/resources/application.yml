@@ -1,0 +1,22 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: springcloud_user_provider
+  datasource:
+    name: TestConnection  #数据库名
+    url: jdbc:mysql://localhost:3306/seatselection?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8 #url
+    username: root  #用户名
+    password: 123456  #密码
+    driver-class-name: com.mysql.jdbc.Driver #数据库链接驱动
+eureka:
+  client:
+    service-url:
+     defaultZone: http://eureka7001.com:7001/springcloud_eureka_7001_war/eureka/,http://eureka7002.com:7002/springcloud_eureka_7002_war/eureka/,http://eureka7003.com:7003/springcloud_eureka_7003_war/eureka/
+
+  instance:
+    instance-id: springcloud_user_provider_8001
+
+info:
+  app.name: abyss_springcloud
+  company.name: www.abyss.com
